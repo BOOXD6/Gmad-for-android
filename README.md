@@ -26,3 +26,13 @@ You can extract `.gma` / `.vpk` files, download addons from the Steam Workshop, 
    make sure to allow files & media perms in app settings, other bugs are mentioned in the app.
 ---
 
+---
+
+### ⚠️ Project Discontinued
+
+This project is **no longer actively maintained**.  
+You can still use or fork it, but **no further updates or support** will be provided.
+
+---
+
+
