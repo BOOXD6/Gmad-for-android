@@ -9,7 +9,7 @@ You can extract `.gma` / `.vpk` files, download addons from the Steam Workshop, 
 
 ### 👤 Created By
 
-**BOOXD6 (kopp0484_61853 on discord)**
+**BoO (kopp0484_61853 on discord)**
 
 ---
 
