@@ -20,7 +20,7 @@ You can extract `.gma` / `.vpk` files, download addons from the Steam Workshop, 
 > ⚠️ **Note:** app downloads from third-party services and writes files to your device storage!
 > ## 📸 Screenshot
 
-![App Screenshot]([assets/screenshot.png](https://github.com/BOOXD6/Gmad-for-android/blob/main/gmad_screenshot.png))
+![App Screenshot](https://github.com/BOOXD6/Gmad-for-android/blob/main/gmad_screenshot.png)
 
 ## 🔧 Bugs
    make sure to allow files & media perms in app settings, other bugs are mentioned in the app.
