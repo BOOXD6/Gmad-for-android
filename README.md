@@ -64,4 +64,4 @@ This is a python-for-android / Buildozer project, so if you want to build the AP
 Questions, bugs, feature ideas — [join the Discord](https://discord.gg/juZZs7hYwy) and ping boo271.
 
 ## Credits
-Built with help from Claude (Anthropic) 
+@boo271, with help from Claude (Anthropic) 
