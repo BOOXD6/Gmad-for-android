@@ -1,46 +1,68 @@
-# 📦 Gmad for Android
+# GMAD & VPK Extractor
 
-Extract **.GMA** and **.VPK** files directly on your Android device — no PC needed.
+A simple Android app for extracting `.gma` (Garry's Mod addon) and `.vpk` (Valve Pak) files straight from your phone. No PC needed — pick a file, hit extract, and get a zip back with everything inside it.
 
-Gmad for Android makes working with Garry’s Mod addon files simple and fast.  
-You can extract `.gma` / `.vpk` files, download addons from the Steam Workshop, extract them, and compress them to your local storage — all from your phone.
+Built with Python, Kivy, and KivyMD.
 
----
+## Why this exists
 
-### 👤 Created By
+I got tired of having to plug my phone into a PC (or use some sketchy web tool) just to peek inside a `.gma` file or pull assets out of a `.vpk`. This does it locally, on-device, no uploads anywhere.
 
-**BoO (kopp0484_61853 on discord)**
+## Features
 
----
+- Extract `.gma` files (Garry's Mod addons)
+- Extract `.vpk` files (Source engine paks)
+- Pick a file manually by typing the path, or use the built-in file browser
+- Output is zipped automatically and saved to `/sdcard/Gmad_Extracted/`
+- Progress shown live while it's working
+- Dark UI, no ads, nothing weird
 
----
+## How to use it
 
-## ✅ Features
+1. Open the app and grant it file access when it asks (needed to read/write to your storage — see below).
+2. Enter the path to your `.gma` or `.vpk` file, or tap **Choose From Files** to browse for it.
+3. Tap **Extract**.
+4. Wait for it to finish — bigger files take longer, especially ones with lots of small assets.
+5. Your extracted files will be zipped up in `/sdcard/Gmad_Extracted/GMAD_Files/` or `/sdcard/Gmad_Extracted/VPK_Files/`.
 
-- 📁 Extract **.GMA** files (Garry’s Mod addons)
-- 🔧 Extract **.VPK** files
-- ⬇️ Download addons directly from **Steam Workshop**
-- 📦 Auto-extract + compress downloaded addons
-- 📱 100% Android-based — **no PC required**
-- 🐍 Built with **Python**
+## Permissions
 
-> ⚠️ **Note:** This project was built using Python. Bugs may occur!
-> ⚠️ **Note:** app downloads from third-party services and writes files to your device storage!
-> ## 📸 Screenshot
+The app needs full storage access to read the file you point it at and to write the extracted zip back to your SD card. On Android 11+, this means granting "All files access" in system settings — the app will send you straight to that screen on first launch if it isn't granted yet.
 
-![App Screenshot](https://github.com/BOOXD6/Gmad-for-android/blob/main/gmad_screenshot.png)
+## Troubleshooting
 
-## 🔧 Bugs
-   make sure to allow files & media perms in app settings, other bugs are mentioned in the app.
----
+**"This is not a GMAD file"**
+You're probably trying to extract a file that's actually LZMA/BIN-compressed (common with mods downloaded straight from the Workshop). Open it in something like ZArchiver first, extract the real `.gma` out of it, then point this app at that.
 
----
+**VPK extraction fails / file not found**
+Multi-part VPKs (`pak01_dir.vpk` plus `pak01_000.vpk`, `pak01_001.vpk`, etc.) all need to be sitting in the same folder. If they're split up, extraction will fail looking for the missing pieces.
 
-### ⚠️ Project Discontinued
+**Something else broke**
+DM me on Discord (link below) with the error message and I'll take a look.
 
-This project is **no longer actively maintained**.  
-You can still use or fork it, but **no further updates or support** will be provided.
+## Building it yourself
 
----
+Dependencies:
 
+```
+kivy
+kivymd
+construct
+requests
+vpk
+```
 
+This is a python-for-android / Buildozer project, so if you want to build the APK yourself you'll need Buildozer set up with those packages listed in your `buildozer.spec`.
+
+## Notes
+
+- The Steam Workshop downloader that used to be in here has been pulled out — it'll probably come back as its own separate app at some point.
+- Everything runs locally on your device. Nothing you extract gets sent anywhere.
+
+## Contact
+
+Questions, bugs, feature ideas — [join the Discord](https://discord.gg/juZZs7hYwy) and ping boo271.
+
+## License
+
+Add your license of choice here.
