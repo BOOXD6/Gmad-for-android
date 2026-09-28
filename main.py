@@ -378,6 +378,10 @@ class MainApp(MDApp):
                  "- Extracting VPK files, all files should be in the same directory, otherwise it will throw an error\n"
                  "For any other error, DM boo271 on Discord \u2014 see the Info to "
                  "join the server.",
+            buttons=[
+                MDFlatButton(text="Join Discord", on_release=self.open_discord_link),
+                MDFlatButton(text="OK", on_release=lambda *a: dialog.dismiss()),
+            ],
         )
         dialog.open()
 
@@ -461,8 +465,25 @@ class MainApp(MDApp):
 
     @mainthread
     def show_dialogg(self, title, text):
-        self.dialog = MDDialog(title=title, text=text, auto_dismiss=True)
-        self.dialog.open()
+        """Result dialog. Errors get OK + Help (Help opens the Errors
+        guide), everything else (i.e. 'Extracted!') gets a single Done."""
+        if title == "Error":
+            buttons = [
+                MDFlatButton(text="OK", on_release=lambda *a: dialog.dismiss()),
+                MDFlatButton(text="Help", on_release=lambda *a: self.open_errors_help(dialog)),
+            ]
+        else:
+            buttons = [
+                MDFlatButton(text="Done", on_release=lambda *a: dialog.dismiss()),
+            ]
+
+        dialog = MDDialog(title=title, text=text, buttons=buttons, auto_dismiss=True)
+        self.dialog = dialog
+        dialog.open()
+
+    def open_errors_help(self, dialog):
+        dialog.dismiss()
+        Clock.schedule_once(lambda dt: self.notiff_onn(None), 0.25)
 
     @mainthread
     def dialog_dismisss(self):
@@ -520,7 +541,7 @@ class MainApp(MDApp):
                     self.update_progress(phase, i, total)
 
     def extract_vpk(self, valuee):
-      
+
         woww = os.path.splitext(os.path.basename(valuee))[0] or "output"
 
         try:
