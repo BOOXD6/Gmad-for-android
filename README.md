@@ -6,7 +6,10 @@ Built with Python, Kivy, and KivyMD.
 
 ## Why this exists
 
-I got tired of having to plug my phone into a PC (or use some sketchy web tool) just to peek inside a `.gma` file or pull assets out of a `.vpk`. This does it locally, on-device, no uploads anywhere.
+i got tired of having to plug my phone into a PC (or use some sketchy web tool) just to peek inside a `.gma` file or pull assets out of a `.vpk`. This does it locally, on-device, no uploads anywhere,
+AND
+to make things easier for mobile users who don't have access to a PC.
+
 
 ## Features
 
